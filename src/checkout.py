@@ -28,9 +28,9 @@ def calcular_valor_final(valor_compra: float, cupom: str = None, e_vip: bool = F
     valor_com_desconto = valor_compra * (1 - desconto)
 
     # Regra de Frete
-    if e_vip or valor_com_desconto < 200.0:
+    if e_vip or valor_com_desconto <= 200.0:
         frete = 0.0
     else:
-        frete = 20.0
+        frete += 20.0
 
     return round(valor_com_desconto + frete, 2)
